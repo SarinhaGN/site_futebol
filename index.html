@@ -1,13 +1,16 @@
 <DOCTYPE html>
-<!DOCTYPE html>
+
 <html>
+	
 	<head>
 		<meta charset="utf-8">
 		<title>Orlando City</title>
 		<link rel="stylesheet"  href="lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet"  href="lib/owl.carousel/owl.carousel/owl.carousel.css">
 		<link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet"  href="css/orlando.css">
 	</head>
+	
 	<body>
 		<header>
 
@@ -57,7 +60,7 @@
 							<li><a href="#"> Schedule</a></li>
 							<li class="search">
 								 <div class="input-group">
-     							 	<input type="search" placeholder="Search ">
+     							 	<input type="search" placeholder="Search" id="input-search">
      							    <span class="input-group-btn">
        								<button class="" type="button"><i class="fa fa-search"></i></button>
       								</span>
@@ -86,28 +89,28 @@
 				</div>
 				
 				<div class="row thumbnails">
-					<div class="col-md-3">
+					<div class="col-md-3 item">
 							
 						<img src="img/noticia-thumb.jpg" alt="Noticia">
 						<h3>Orlando City Acquieres Goalkeeper Joe Bendik From Toronto FC</h3>
 						<time>December 21, 2015</time>
 
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3 item">
 							
 						<img src="img/noticia-thumb.jpg" alt="Noticia">
 						<h3>Orlando City Acquieres Goalkeeper Joe Bendik From Toronto FC</h3>
 						<time>December 21, 2015</time>
 
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3 item">
 
 						<img src="img/noticia-thumb.jpg" alt="Noticia">
 						<h3>Orlando City Acquieres Goalkeeper Joe Bendik From Toronto FC</h3>
 						<time>December 21, 2015</time>
 
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3 item">
 						
 						<img src="img/noticia-thumb.jpg" alt="Noticia">
 						<h3>Orlando City Acquieres Goalkeeper Joe Bendik From Toronto FC</h3>
@@ -169,7 +172,143 @@
 
 		</section>
 
-		<script type="lib/jquery/jquery.min.js"></script>
-		<script type="lib/bootstrap/js/bootstrap.min.js"></script>
+		<footer>
+			
+			<div class="row row-cinza-claro">
+				
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-md-2 text-center">
+
+							<img class="logotipo" src="img/orlando-logo.png " alt="Logotipo">
+							
+						</div>
+						<div class="col-md-10">
+
+							<div class="row row-cols"> 
+
+								<div class="col-md-4 col-popular-post">
+									
+									<h4>Popular Posts</h4>
+
+									<ul class="list-unstyled">
+										
+										<li>
+											<h5>Neque porro quisquam est, quister.</h5>
+											<time>January 01, 2016</time>
+										</li>
+										<li>
+											<h5>Neque porro quisquam est, quister.</h5>
+											<time>January 01, 2016</time>
+										</li>
+
+									</ul>
+
+								</div>
+								<div class="col-md-4 col-links">
+									
+									<h4>Links</h4>
+
+									<ul class="list-unstyled">
+										<li><a href="#"><i class="fa fa-angle-right"></i>Tikets</a></li>
+										<li><a href="#"><i class="fa fa-angle-right"></i>News</a></li>
+										<li><a href="#"><i class="fa fa-angle-right"></i>Schedule</a></li>
+									</ul>
+
+								</div>
+								<div class="col-md-4 col-get-in-touch">
+									
+									<h4>Get in touch</h4>
+									
+									<address>
+										<i class="fa fa-map-marker"></i><span>618 E. South Street, Suite 510<br/>
+										Orlando, FL 32801</span>
+									</address>
+
+									<p><a href="tel:18550RLCITY"><i class="fa fa-phone"></i>1.855.ORL.CITY</a></p>
+
+									<ul class="list-unstyled list-socials">
+										<li>
+											<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa fa-twitter"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+
+								</div>
+
+							</div>
+
+							
+						</div>	
+
+					</div>	
+					
+				</div>
+
+			</div>
+
+			<div class="row row-cinza-escuro">
+				
+				<div class="container">
+
+					<p class="pull-left">Copyright © Orlando City Soccer 2016. All rights reserved.</p>
+					<p class="pull-right text-roxo">Created by HCODE in Udemy</p>
+				
+				</div>
+
+			</div>
+
+		</footer>
+
+		<script src="lib/jquery/jquery.min.js"></script>
+		<script type="lib/owl.carousel/owl.carousel/owl.carouse.min.js"></script>
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script>
+		$(document).ready(function() {
+
+			$("#logotipo").on("mouseover",function(){
+			 /*mouseover = quando o mouse tocar no logo*/
+				
+				$("#banner h1").addClass("efeito");
+
+			}).on("mouseout", function(){
+				/*mouseout = quando o mouse sair do logo*/
+
+				$("#banner h1").removeClass("efeito");
+
+			});
+
+			$("#input-search").on("focus", function(){
+
+				$("li.search").addClass("ativo");
+
+			}).on("blur", function(){
+				/* blur = quando deixar a caixa search/ perder o foco*/
+
+				$("li.search").removeClass("ativo");
+
+			});
+
+			$(".thumbnails").owlCarousel({
+
+				autoPlay: 3000, /*toca automaticamente com intervalo de 3 segundos*/
+
+				items : 4 /*quantidade de itens*/
+
+			});
+
+		});
+		</script>
+
 	</body>
 </html>
