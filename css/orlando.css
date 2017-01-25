@@ -8,12 +8,11 @@
 	src: url("../fonts/Open_Sans/OpenSans-Light.ttf");
 	font-size: 1em;
 }
-
 header{
 	width: 100%;
 	height: 150px;
 	background-color: rgba(94,41,154, .8);
-	z-index: 2;
+	z-index: 2; /*usado para profundidade*/
 	position: relative;
 }
 header .container{
@@ -95,7 +94,6 @@ header .header-black li.club-21{
 header .header-black li.club-22{
 	background-position: -994px 0px;
 }
-
 header .header-black li a{
 	width: 32px;
 	height: 32px;
@@ -104,17 +102,26 @@ header .header-black li a{
 header #logotipo {
 	position: absolute;
 	top: 20px;
+	z-index: 3; /*z-index é o indece de profundidade. Nesse caso sobe +3*/
+}
+#banner h1.efeito {
+	color:red;
+	font-size: 12em;
 }
 #menu{
 	margin: 12px 0;
 }
 #menu li{
 	display: inline-block;
-	font-family: "OpenSans";
-	font-size: 
+	font-family: "OpenSans"; 
 }
 #menu li.search{
 	width: 182px;
+	transition-timing-function: cubic-bezier(1,-.91,.91,1);
+	transition-duration:  1s;
+}
+#menu li.search.ativo{
+	width: 300px;
 }
 #menu li.search input {
 	background-color: #5C2D90;
@@ -122,6 +129,10 @@ header #logotipo {
 	border:none;
 	height: 30px;
 	line-height: 30px;
+	padding-left: 8px;
+}
+#menu li.search.ativo input{
+	width: 300px;
 }
 #menu li.search ::-webkit-input-placeholder{
 	color: #fff;
@@ -154,6 +165,7 @@ header #logotipo {
 	top: -110px;
 }
 #banner h1 {
+	transition: 1s;
 	color: #fff;
 	top: 300px;
 	position: relative;
@@ -257,4 +269,114 @@ header #logotipo {
 #call-to-action .row-max-400 {
 	margin: 0 auto;
 	max-width: 400px;
+}
+footer {
+	margin-top: 110px;
+}
+footer .row {
+	width: 100%;
+}
+footer .row p {
+	line-height: 55px;
+	margin-bottom: 0px;
+}
+footer .row-cinza-claro {
+	height: 200px;
+	background-color: #171f26;
+	margin-right: 0px;
+    margin-left: 0px;
+}
+footer .row-cinza-escuro {
+	height: 60px;
+	background-color: #11171D;
+	border-top: #242d37 1px solid;
+	margin-right: 0px;
+    margin-left: 0px;
+}
+footer .pull-left {
+	color: #666;
+	font-style: 'OpenSans';
+	font-size: 16px;
+}
+footer .text-roxo {
+	color: #623291;
+	font-style: 'OpenSans';
+	font-weight: bold;
+	font-size: 14px;
+}
+footer .logotipo {
+	margin-top: 28px;
+}
+footer .col-popular-post,
+footer .col-links,
+footer .col-get-in-touch {
+	margin-top: 40px;
+}
+footer .row-cols h4 {
+	color: #fff;
+	font-style: 'OpenSans';
+	font-size: 16px;
+	border-bottom:  #242d37 1px solid;
+	padding-bottom: 17px;
+	text-transform: uppercase;
+}
+footer .row-cols h5 {
+	color: #666;
+	font-family: Arial;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+footer .row-cols time {
+	font-family: Arial;
+	font-size: 14px;
+	color: #fde092;
+}
+footer .col-links a {
+	font-family: Arial;
+	font-size: 14px;
+	color: #fff;
+}
+footer .col-links .fa {
+	margin: 0 6px;
+}
+footer .col-get-in-touch address {
+	color: #666;
+	font-family: Arial;
+	font-size: 14px;
+	margin-bottom: 6px;
+}
+footer .col-get-in-touch address span {
+	display: inline-block;
+}
+footer .col-get-in-touch address i{
+	position: relative;
+	top: -14px;
+}
+footer .col-get-in-touch i {
+	color: #9b9b9b;
+	font-size: 20px;
+	margin: 0 6px;
+}
+
+footer .col-get-in-touch p{
+	line-height: 20px;
+}
+footer .list-socials {
+	margin-top: 4px;
+}
+footer .list-socials li {
+	display: inline-block;
+}
+footer .list-socials a {
+	display: block;
+	border: #9b9b9b 1px solid;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	border-radius: 14px;
+	text-align: center;
+}
+footer .list-socials i {
+	font-size: 16px;
+	margin: 7px auto;
 }
