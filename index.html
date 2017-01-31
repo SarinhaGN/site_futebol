@@ -1,33 +1,62 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 	
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Orlando City</title>
 		
-		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		
 		<link rel="stylesheet" href="lib/owl.carousel/owl-carousel/owl.carousel.css">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/orlando.css">
+		<link rel="stylesheet" href="css/orlando-mobile.css">
+
 		<script src="lib/jquery/jquery-3.1.1.min.js"></script>
 		<script src="lib/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
 		<script src="js/efeitos.js"></script>
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
 	</head>
 	
 	<body>
 		<header>
 
-			<div class="container">
+			<div id="menu-mobile-mask" class="visible-xs">
+				
+
+
+			</div>
+
+			<div id="menu-mobile" class="visible-xs">
+				
+				<ul class="list-unstyled">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="videos.html">Vídeos</a></li>
+					<li><a href="#"> Tickets</a></li>
+					<li><a href="#"> News</a></li>
+					<li><a href="#"> Schedule</a></li>
+				</ul>
+
+				<div class="bar-close">
+					<button type="button" class="btn btn-close"><i class="fa fa-close"></i></button>
+				</div>
+
+			</div>
+
+			<div class="container container-logo">
 				<img id="logotipo" src="img/orlando-logo.png " alt="Logotipo">
 			</div>
 			<div class="header-black">
 				
 				<div class="container">
+
+					<input type="search" id="input-search-mobile" class="visible-xs" placeholder="search...">
+
+					<button id="btn-bars" type="button"><i class="fa fa-bars"></i></button>
+					<button id="btn-search" type="button"><i class="fa fa-search"></i></button>
+
 
 					<ul class="pull-right">
 						<li class="club-01"><a href="#"></a> </li>
@@ -63,8 +92,8 @@
 
 					<nav id="menu" class="pull-right">
 						<ul>
-							<li><a href="index.html"></i>Home</a></li>
-							<li><a href="videos.html"></i>Vídeos</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="videos.html">Vídeos</a></li>
 							<li><a href="#"> Tickets</a></li>
 							<li><a href="#"> News</a></li>
 							<li><a href="#"> Schedule</a></li>
@@ -72,7 +101,7 @@
 								 <div class="input-group">
      							 	<input type="search" placeholder="Search" id="input-search">
      							    <span class="input-group-btn">
-       								<button class="" type="button"><i class="fa fa-search"></i></button>
+       									<button class="" type="button"><i class="fa fa-search"></i></button>
       								</span>
     							</div><!-- /input-group -->
 							</li>
@@ -97,6 +126,10 @@
 					<h2>latest news</h2>
 					<hr>
 				</div>
+
+				<button type="button" id="btn-news-prev"><i class="fa fa-angle-left"></i></button>
+
+				<button type="button" id="btn-news-next"><i class="fa fa-angle-right"></i></button>
 				
 				<div class="row thumbnails">
 					<div class=" item">
@@ -218,7 +251,7 @@
 
 					<div class="row">
 
-						<div class="col-md-2 text-center">
+						<div class="col-md-2 text-center hidden-xs">
 
 							<img class="logotipo" src="img/orlando-logo.png " alt="Logotipo">
 							
@@ -227,7 +260,7 @@
 
 							<div class="row row-cols"> 
 
-								<div class="col-md-4 col-popular-post">
+								<div class="col-md-4 col-popular-post hidden-xs">
 									
 									<h4>Popular Posts</h4>
 
@@ -245,12 +278,12 @@
 									</ul>
 
 								</div>
-								<div class="col-md-4 col-links">
+								<div class="col-md-4 col-links hidden-xs">
 									
 									<h4>Links</h4>
 
 									<ul class="list-unstyled">
-										<li><a href="#"><i class="fa fa-angle-right"></i>Tikets</a></li>
+										<li><a href="#"><i class="fa fa-angle-right"></i>Tickets</a></li>
 										<li><a href="#"><i class="fa fa-angle-right"></i>News</a></li>
 										<li><a href="#"><i class="fa fa-angle-right"></i>Schedule</a></li>
 									</ul>
@@ -258,14 +291,23 @@
 								</div>
 								<div class="col-md-4 col-get-in-touch">
 									
-									<h4>Get in touch</h4>
+									<h4 class="hidden-xs">Get in touch</h4>
 									
-									<address>
+									<address class="hidden-xs">
 										<i class="fa fa-map-marker"></i><span>618 E. South Street, Suite 510<br/>
 										Orlando, FL 32801</span>
 									</address>
 
-									<p><a href="tel:18550RLCITY"><i class="fa fa-phone"></i>1.855.ORL.CITY</a></p>
+									<p class="hidden-xs"><a href="tel:18550RLCITY"><i class="fa fa-phone"></i>1.855.ORL.CITY</a></p>
+
+									<div class="row-fluid visible-xs">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-footer "><i class="fa fa-map-marker"></i>Location</a>
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-footer"><i class="fa fa-phone"></i>Call</a>
+										</div>
+									</div>
 
 									<ul class="list-unstyled list-socials">
 										<li>
@@ -279,6 +321,9 @@
 										</li>
 										<li>
 											<a href="#"><i class="fa fa-pinterest-p"></i></a>
+										</li>
+										<li class="page-up">
+											<a href="#" id="page-up"><i class="fa fa-chevron-up"></i></a>
 										</li>
 									</ul>
 
@@ -297,7 +342,7 @@
 
 			<div class="row row-cinza-escuro">
 				
-				<div class="container">
+				<div class="container copyright-mobile">
 
 					<p class="pull-left">Copyright © Orlando City Soccer 2016. All rights reserved.</p>
 					<p class="pull-right text-roxo">Created by HCODE in Udemy</p>
